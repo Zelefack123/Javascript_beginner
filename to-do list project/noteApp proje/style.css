@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(253, 168, 253); 
+    min-height: 100vh;
+}
+
+.container .row1,.container .row2{
+    display: flex;
+    margin-top:3vh;
+    margin-left:2vw;
+    padding-inline: 0.5%;
+}
+.row2{
+    background-color: rgb(203, 54, 203);
+    border-radius: 200px;
+    width:17%;
+    text-align: center;
+}
+
+.row1 img,.row2 img{
+margin-top: 2%;
+}
+
+.row2 img{
+margin-top: 10%;
+margin-left: 3%;
+}
+.row3{
+    display: none;
+    position:relative;
+}
+
+.row3 textarea{
+    margin-top:3vh;
+    margin-left:2vw;
+    border-radius: 20px;
+}
+
+
+.row3 img{
+    position: absolute;
+    top: 35px; /* Adjust the vertical position */
+    right: 10px; /* Position it towards the right side */
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+}
+/* zAxs;'
+`*/

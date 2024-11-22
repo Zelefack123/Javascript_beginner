@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin:0
+}
+body{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px blue;
+    padding:3rem 5rem;
+    margin-top:1em;
+
+}
+input:last-of-type{
+    margin-top:2em;
+}
+/* Style for the form */
+.form label {
+    display: inline-block;
+}
+
+.form input {
+    display: inline-block;
+}
+
+input,button{
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width:180%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+span{
+    color:red;
+}
+
+button{
+
+    background-color: blue;
+    color: white;
+    outline: none;
+    border:none;
+    border-radius: 4%;
+}

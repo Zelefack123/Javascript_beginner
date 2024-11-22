@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body{
+background: black;
+min-height: 100vh;
+display:flex;
+justify-content: center;
+align-items: center;
+
+}
+.card{
+  background: linear-gradient(120deg, aqua,purple);
+  max-width:30rem;
+  border-radius: 2%;
+  padding: 13rem 2rem  16rem;
+  height:60vh;
+  text-align: center;
+  
+}
+
+.search-box{
+    display: flex;
+    margin-top:-10rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    
+    
+}
+.search-box input{
+    
+    font-size: 1.1rem;
+    padding: 8px;
+    flex:1;
+    border-radius: 30px;
+    outline:0;
+    border: 0;
+}
+
+
+.search-box i{
+    background-color:white;
+    border-radius:50%;
+    margin-left:2%;
+    padding:0.7rem ;
+    }
+
+.card img{
+    width:90px;
+    height:90px;
+    margin-top:20px;
+
+}
+
+.card #temp{
+    font-size:70px;
+    margin-top:30px;
+    
+
+}
+.card #temptown{
+    font-size:30px;
+    margin-top:10px;
+}
+ .tempinfo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:10%;
+    margin-bottom:50%;
+
+ }
+ #humidity p:first-of-type{
+   font-weight: bold;
+   font-size:20px;
+ }
+
+ #windspeed p:first-of-type{
+    font-weight: bold;
+    font-size:20px;
+  }
+
+ sup{
+    font-size:2rem;
+ }

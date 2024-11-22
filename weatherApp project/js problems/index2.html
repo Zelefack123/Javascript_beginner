@@ -1,0 +1,227 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>heading</h1>
+   
+     <p>Learning a new skill is a journey? that involves dedication
+        , patience, and consistent practice. Whether it's mastering a language, picking up a musical instrument, 
+        or diving into a complex subject like programming, the process can be both challenging and rewarding. 
+        The key to progress! lies in setting small, achievable goals that build upon each! other over time. 
+        Embracing mistakes as opportunities for growth and celebrating even the smallest victories can keep motivation high. 
+        Ultimately, it's the steady accumulation of effort that transforms initial struggles into true expertise😁😁💕😂🙂.</p>
+  
+  
+<script>
+const para = document.getElementsByTagName("p")[0];
+const mystring = para.innerHTML;
+//  const updatedcontent = mystring.split(" ").map(element => {
+//       if ( element.length > 8){
+//       return  `<span style="background : yellow">${element}</span>`
+//       }
+//         else 
+//         return element;
+//     }).join(" ");
+// para.innerHTML= updatedcontent;
+
+const anchor = document.createElement('a');
+anchor.setAttribute('href', 'https://forcemipsum.com');
+anchor.textContent = "Visit us";
+document.body.appendChild(anchor);
+
+const updatedcontent = mystring.split(" ");
+let Regex1 =/\?/;
+let Regex2 =/!/;
+
+const newarray = updatedcontent.map(element=>{
+    if (element.match(Regex1)){
+   return "😏";
+}
+else if (element.match(Regex2)){
+  return "❤️"
+}
+return element;
+
+})
+
+para.innerHTML= newarray.join(" ");
+
+    </script>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <div class = "form">
+    <input type="text" id = "text1" placeholder="Name" >
+
+    <input type="password" id = "text2" placeholder="Password" >
+    <input type="password" id = "text3" placeholder="comfirm password" >
+
+   <button>Register</button>
+   </div>
+   <script>
+// const form = document.querySelector(".form")
+//  const name = document.getElementById("text1");
+//  const nameLabel = document.createElement("label");
+//  namelabel.textContent ="Name";
+//  namelabel.appendChild(name);
+//  form.appendChild(namelabel);
+//  name.setAttribute('for', 'name');
+
+
+// const password = document.getElementById("text2");
+//  const passwordlabel = document.createElement("label");
+//  password.setAttribute('for', 'password');
+//   passwordlabel.textContent = "password"
+//   password.appendChild(password);
+//   form.appendChild(passwordlabel);
+
+
+// const confirmpassword = document.getElementById("text3");
+// const  comfirmpasswordlabel = document.createElement("label");
+//   comfirmpasswordlabel.appendChild(confirmpassword);
+//   form.appendChild(confirmpasswordlabel);
+
+// confirmpassword.setAttribute('for', 'name');
+// confirmpasswordlabel.textContent = "confirm password"
+
+const form = document.querySelector(".form");
+
+// Adding the Name label and input
+const name = document.getElementById("text1");
+const nameLabel = document.createElement("label");
+nameLabel.textContent = "Name: ";
+nameLabel.setAttribute('for', 'text1'); // Associate label with the input
+name.insertAdjacentElement('beforebegin', nameLabel); // Add the label before the input
+
+
+// Adding the Password label and input
+const password = document.getElementById("text2");
+const passwordLabel = document.createElement("label");
+passwordLabel.textContent = "Password: ";
+passwordLabel.setAttribute('for', 'text2'); // Associate label with the input
+password.insertAdjacentElement('beforebegin', passwordLabel); // Add the label before the input
+
+
+// Adding the Confirm Password label and input
+const confirmPassword = document.getElementById("text3");
+const confirmPasswordLabel = document.createElement("label");
+confirmPasswordLabel.textContent = "Confirm Password: ";
+confirmPasswordLabel.setAttribute('for', 'text3'); // Associate label with the input
+confirmPassword.insertAdjacentElement('beforebegin', confirmPasswordLabel); // Add the label before the inpu
+// const submitbutton=document.getElementsByTagName("button");
+// submitbutton.addEventListener('click', myfunction);
+// const myfunction = () => {
+// let existingError = document.querySelector("span");
+// if(existingError & existingError.textContent === "Is required"){
+//     errorMessage.remove();
+// }
+
+// if(name.value.trim() === ""){
+//     const errorMessage= document.createElement("span");
+//     errorMessage.textContent="name field is required";
+//     name.insertAdjacentElement('afterend', errorMessage);
+
+// }
+
+// if (password.value.trim() === "") {
+//                 const errorMessage = document.createElement("span");
+//                 errorMessage.textContent = "Password is required";
+//                 password.insertAdjacentElement('afterend', errorMessage);
+//             }
+
+            
+// if (password.value.trim() === "") {
+//                 const errorMessage = document.createElement("span");
+//                 errorMessage.textContent = "Confirm Your password";
+//                 password.insertAdjacentElement('afterend', errorMessage);
+//             }
+
+//             if (password.value !== confirmPassword.value) {
+//                 const errorMessage = document.createElement("span");
+//                 errorMessage.textContent = "Passwords do not match";
+//                 confirmPasswordLabel.insertAdjacentElement('afterend', errorMessage);
+//             }
+
+// }
+
+
+
+const submitButton = document.querySelector("button");
+        submitButton.addEventListener('click', myFunction);
+        submitButton.setAttribute('disable', disabled);
+
+
+        function myFunction() {
+            // Clear existing error messages
+            const existingErrors = document.querySelectorAll("span");
+            existingErrors.forEach(error => error.remove());
+
+
+            // Validate the Name field
+            if (name.value.trim() === "") {
+                const errorMessage = document.createElement("span");
+                errorMessage.textContent = "Name field is required";
+                name.insertAdjacentElement('afterend', errorMessage);
+            }
+
+            // Validate the Password field
+            if (password.value.trim() === "") {
+                const errorMessage = document.createElement("span");
+                errorMessage.textContent = "Password is required";
+                password.insertAdjacentElement('afterend', errorMessage);
+            }
+
+            // Validate the Confirm Password field
+            if (confirmPassword.value.trim() === "") {
+                const errorMessage = document.createElement("span");
+                errorMessage.textContent = "Confirm your password";
+                confirmPassword.insertAdjacentElement('afterend', errorMessage);
+            }
+
+            // Check if passwords match
+            if (password.value !== confirmPassword.value) {
+                const errorMessage = document.createElement("span");
+                errorMessage.textContent = "Passwords do not match";
+                confirmPassword.insertAdjacentElement('afterend', errorMessage);
+            }
+        }
+
+        submitButton.setAttribute("disabled","disabled");
+  const inputs = document.querySelectorAll("input");
+
+  const checkInput =   Array.from(inputs).every( input =>
+input.value.trim() === "")
+ 
+if (!checkInput) {
+submitButton.removeAttribute('disabled')
+submitButton.onclick(()=>{
+        alert("successul registration")
+    })
+}
+ 
+
+else{
+    submitButton.setAttribute("disabled","disabled");
+}
+
+
+
+
+   </script>
+</body>
+</html>
