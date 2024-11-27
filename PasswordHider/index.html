@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password  </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <div >
+        <input type="password" name="" id="input">
+        <i class="fa fa-eye" onclick="showPassword()" ></i>
+        <!-- <i class="fa fa-eye" aria-hidden="true"></i>
+        <i class="fa fa-eye-slash" aria-hidden="true"></i> -->
+    </div>
+</body>
+<script>
+    let Input = document.getElementById("input");
+    let Icon = document.querySelector("i");
+ const showPassword = () => {
+    if(Input.type === "password"){
+        Input.setAttribute("type","text");
+        Icon.classList.remove("fa", "fa-eye-slash"); // Add multiple classes that is fa and fa-slash
+        Icon.classList.add("fa", "fa-eye"); 
+    }
+    else{
+        Input.setAttribute("type","password");
+        Icon.classList.remove("fa", "fa-eye"); // Remove multiple classes
+        Icon.classList.add("fa", "fa-eye-slash"); // Add multiple classes
+    }
+}
+</script>
+</html>
