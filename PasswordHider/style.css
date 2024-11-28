@@ -5,7 +5,7 @@
 }
 
 .container{
-    background:linear-gradient(to bottom,pink, rgb(177, 168, 168));
+    background:linear-gradient(to bottom,rgb(123, 202, 247), rgb(250, 249, 249));
    display:flex;
    justify-content: center;
    align-items: center;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+  
+    <title>Quote Generator </title>
+</head>
+<body class="container">
+    <div class="container1">
+        <h1>Quote of the day</h1>
+         <blockquote> </blockquote>
+         <p>Zelefack Marie</p>
+        <button onclick="fetchQuote()">Quote</button>
+        <button onclick="tweet()"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><g fill="none"><g clip-path="url(#primeTwitter0)"><path fill="currentColor" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg>
+            Tweet</button>
+    </div>
+    
+</body>
+<script>
+const apikey = "i4Q6BsUktFPW0a8EFHeGVg==rhwL8HSRqhxgQer4"; // Your API Key
+const apiUrl = "https://api.api-ninjas.com/v1/quotes?category=inspirational"; // Example category
+const quoteBox = document.querySelector("blockquote");
+const Author = document.querySelector("p");
+
+async function fetchQuote(){
+console.log("the fetch has started");
+let response = await fetch(apiUrl,
+    {headers:{
+       "X-Api-Key": apikey
+    }}
+);
+const quotes = await response.json();
+console.log("the response has been fetched")
+console.log(quotes);
+
+ quoteBox.innerHTML = quotes[0].quote;
+ Author.innerHTML = quotes[0].author;
+ 
+}
+
+
+fetchQuote();
+console.log("the function is done executing");
+ const tweet = () =>{
+    window.open("https://twitter.com/intent/tweet?text=" + quoteBox.innerHTML + "--- By " + Author.innerHTML,
+    
+    "Tweet Window","width=250, height=300");
+ }
+
+</script>
+</html>

@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: rgb(118, 118, 240);
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    
+}
+.container1{
+ background-color: whitesmoke;
+ width:600px;
+ height: auto;
+ padding:10px 16px;
+ border-radius:20px;
+ text-align: center;
+}
+
+.container1 h1{
+    font-size:2rem;
+    text-align: center;
+    margin:auto;
+    display:inline-block;
+    position:relative;
+}
+.container h1:after{
+   content:'';
+   position: absolute;
+   width:0;
+   top: 100%; /* Positions 5px below the top of the h1 */
+   left: 0;
+   bottom:0;
+   height:2px;
+    background-color:blue;
+    transition: transform 2s ease-in-out ;
+}
+.container h1:hover::after{
+  
+    width:100%;
+}
+.container blockquote{
+    margin-top:4%;
+}
+blockquote::after,blockquote::before{
+    content:"❤️💕"
+}
+.container p{
+    text-align: right;
+    margin-top: 5%;
+    margin-bottom:-3%;
+    position:relative;
+}
+.container p:before{
+    content:'';
+    position: absolute;
+    width:2cqmin;
+    top: 50%; 
+    left: 80%;
+    bottom:0;
+    background:blue;
+    height:2px;
+}
+
+button:first-of-type,button:last-of-type{
+    background:blue;
+    border-radius:100px;
+    padding:10px 14px;
+    outline:0;
+    border:0;
+    color:white;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    
+
+}
+button:last-of-type{
+    background: none;
+    color:black;
+    outline: 2px solid blue; /* The border-like effect */
+    outline-offset: -2px;    /* Move the outline inward */
+    margin-top:10%;
+}
+
+svg{
+    color: blue;
+    margin-right:2px;
+}
