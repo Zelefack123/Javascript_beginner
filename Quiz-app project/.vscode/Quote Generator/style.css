@@ -60,7 +60,7 @@ blockquote::after,blockquote::before{
     position: absolute;
     width:2cqmin;
     top: 50%; 
-    left: 80%;
+    right: 20%;
     bottom:0;
     background:blue;
     height:2px;
