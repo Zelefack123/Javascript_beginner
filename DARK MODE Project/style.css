@@ -1,0 +1,121 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: poppins;
+   
+}
+:root{
+    --primary-color:#edfcfc;
+    --secondary-color:#212121;
+
+}
+body{
+    overflow-x: hidden;
+    height:100vh;
+    background: var(--secondary-color);
+    color:var(--primary-color);
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    margin-top:2rem;
+    padding-inline: 0.5rem;
+    align-items: center;
+}
+.logo{
+    color:#F24A0D;
+}
+.container{
+    margin-right: 2rem;
+    display:flex;
+    justify-content: center;
+}
+.container i{
+   margin-top: 0.5rem;
+   margin-left:0.2rem; 
+
+}
+header nav ul{
+    display:flex;
+  
+}
+nav ul li{
+    text-decoration:none;
+    list-style-type: none;
+    padding: 0.5rem
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+nav ul li a:hover{
+    background-color: #F24A0D;
+}
+.container2{
+    display:flex;
+    justify-content: space-between;
+
+}
+.row1, .row2 {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* Horizontally center the rows */
+    height: 100vh; /* Ensure full viewport height for vertical centering */
+    flex-direction: column; /* Stack the rows vertically */
+    margin-top:-5rem;
+    margin-left: 2rem
+}
+.row1 h1{
+font-size:2.5rem;
+text-align: left;
+}
+.row1 h1 span{
+    color: #F24A0D;
+ 
+}
+.row1 p{
+    color:var(--primary-color)
+}
+.row1  button{
+ width:8rem;
+ margin-top:10px;
+ background-color:var(--primary-color);;
+ border-radius:5px;
+ padding:10px;
+color:var(--secondary-color);
+}
+.row2{
+    
+margin-right:8rem;
+position:relative;
+}
+.row2 img:nth-child(1){
+ position:absolute;
+ z-index: -1;
+ right: -6rem;
+ top:2rem;
+ 
+}
+.row2 img:nth-child(2){
+    margin-top: 7rem;
+}
+.footer{
+    display:flex;
+    gap:2rem;
+    margin-left: 2rem;
+    color:var(--primary-color);
+    margin-top:-4% ;
+}
+.footer i{
+ color:var(--primary-color);
+}
+.footer img{
+    filter: hue-rotate(var(--primary-color)); /* Change to primary color */
+   color:white;
+
+}
