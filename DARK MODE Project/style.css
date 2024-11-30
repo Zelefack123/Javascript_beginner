@@ -2,7 +2,7 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
-    font-family: poppins;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
    
 }
 :root{
@@ -60,6 +60,7 @@ nav ul li a{
     padding: 0.5rem;
     border-radius: 10px;
     cursor:pointer;
+    font-size: 0.8rem;
 }
 nav ul li a:hover{
     background-color: #F24A0D;
@@ -88,7 +89,8 @@ text-align: left;
  
 }
 .row1 p{
-    color:var(--primary-color)
+    color:var(--primary-color);
+    font-size: 0.9rem;
 }
 .row1  button{
  width:8rem;
