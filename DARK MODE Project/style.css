@@ -6,8 +6,14 @@
    
 }
 :root{
+    
     --primary-color:#edfcfc;
     --secondary-color:#212121;
+
+}
+.lightTheme{
+    --primary-color:#212121;
+    --secondary-color:#edfcfc;
 
 }
 body{
@@ -26,6 +32,7 @@ header{
 }
 .logo{
     color:#F24A0D;
+    cursor:pointer;
 }
 .container{
     margin-right: 2rem;
@@ -44,7 +51,8 @@ header nav ul{
 nav ul li{
     text-decoration:none;
     list-style-type: none;
-    padding: 0.5rem
+    padding: 0.5rem;
+    cursor:pointer;
 }
 nav ul li a{
     text-decoration: none;
@@ -55,6 +63,7 @@ nav ul li a{
 }
 nav ul li a:hover{
     background-color: #F24A0D;
+    cursor:pointer;
 }
 .container2{
     display:flex;
@@ -94,13 +103,24 @@ color:var(--secondary-color);
 margin-right:8rem;
 position:relative;
 }
-.row2 img:nth-child(1){
- position:absolute;
- z-index: -1;
- right: -6rem;
- top:2rem;
- 
+.row2 img:nth-child(1) {
+    position: absolute;
+    z-index: -1;
+    right: -6rem;
+    top: 4rem;
+    animation: moveUpDown 3s ease-in-out infinite;
 }
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0); /* Starting and ending position (no movement) */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up by 20px at the middle of the animation */
+
+    }
+}
+
 .row2 img:nth-child(2){
     margin-top: 7rem;
 }
@@ -114,8 +134,15 @@ position:relative;
 .footer i{
  color:var(--primary-color);
 }
-.footer img{
-    filter: hue-rotate(var(--primary-color)); /* Change to primary color */
-   color:white;
 
+.footer img{
+  background-color: var(--primary-color);
+ cursor: pointer;
+}
+
+.footer i:hover{
+color:#F24A0D;
+}
+.footer img:hover{
+background-color: #F24A0D;
 }

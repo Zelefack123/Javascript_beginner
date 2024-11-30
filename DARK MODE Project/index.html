@@ -10,17 +10,20 @@
 <body>
     <header>
  <span class="logo">LOGO HERE</span>
- <div class="container"><nav class = "navlinks">
+ <div class="container">
+    <nav class = "navlinks">
      <ul>
     <li><a href="#">HOME</a></li>
     <li><a href="#">ABOUT</a></li>
     <li><a href="#">PORTFOLIO</a></li>
     <li><a href="#">SERVICES</a></li>
-    <li><a href="#">HERE ME</a></li>
+    <li><a href="#">HIRE ME</a></li>
      </ul>
 
    </nav>
-   <span class="moonicon"><i class="fa-solid fa-moon"></i></span>
+   <span class="sunIcon"><i class="fa-solid fa-sun"></i></span>
+
+
  </div>
     </header>
    <section class="container2">
@@ -37,10 +40,52 @@
 
    <footer class = "footer">
     <a href ="#"><i class="fa-brands fa-linkedin-in"></i></a>
-    <!-- <img src="images/image.png" alt="behance logo" class="src" width="15"> -->
-    <img src="images/image1.png" alt="dribbble logo"  height="15">
+    <img src="images/image.png" alt="behance logo" class="src" width="15">
+    <img src="images/image1.png" alt="dribbble logo" srcset="" height="15">
 
 
 </footer>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sunIcon = document.querySelector(".sunIcon i");
+    if(localStorage.getItem(("theme")=== null)){
+        localStorage.setItem("theme" , "light");
+    }
+    let localDATA = localStorage.getItem("theme");
+     if (localDATA === "dark"){
+        sunIcon.classList.replace("fa-moon", "fa-sun"); 
+        document.body.classList.remove("lightTheme")
+
+     }
+     else if (localDATA === "light"){
+        sunIcon.classList.replace("fa-sun", "fa-moon"); 
+        document.body.classList.add("lightTheme")
+
+     }
+    if (sunIcon){
+    sunIcon.onclick = () => {
+        document.body.classList.toggle("lightTheme");
+       if(document.body.classList.contains("lightTheme")){
+        sunIcon.classList.replace("fa-sun", "fa-moon"); 
+        localStorage.setItem("theme" , "light");
+
+       }
+    else{
+     
+        sunIcon.classList.replace("fa-moon", "fa-sun"); 
+        localStorage.setItem("theme" , "dark");
+
+   
+    }
+    L
+           
+
+        // moonIcon.classList.toggle("fa-moon");
+        // moonIcon.classList.toggle("fa-sun");
+    };}
+
+});
+</script>
 </body>
 </html>
