@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <h1>JavaScript <span>Age Calculator</span></h1>
+    <div class="box">
+        <input type="date" id="date">
+        <button id="calculator">Calculate</button>
+    </div>
+    <p>You are <span id="years">0</span> years, <span id="month">0</span> months, and <span id="age">0</span> days old</p>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let years = document.getElementById("years");
+    let month = document.getElementById("month");
+    let day = document.getElementById("age");
+    let date = document.getElementById("date");
+    let calculator = document.getElementById("calculator");
+
+    calculator.onclick = () => {
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Ensure two digits
+        let currentDay = currentDate.getDate().toString().padStart(2, '0'); // Ensure two digits
+        let selectedDate = date.value;
+        let maxDate = `${currentYear}-${currentMonth}-${currentDay}`
+        date.setAttribute("max",maxDate);
+
+        // Check if the date is valid
+        if (!selectedDate) {
+            alert("Please select a date.");
+            return;
+        }
+
+        let newDate = new Date(selectedDate);
+        let newYear = newDate.getFullYear();
+        let newMonth = newDate.getMonth() + 1; // 1-indexed
+        let newDay = newDate.getDate();
+
+        // Check if the selected date is in the future
+        if (newDate > currentDate) {
+            alert("Please select a date in the past or today.");
+            return;
+        }
+
+        // Calculate age
+        let ageYears = currentYear - newYear;
+        let ageMonths = currentMonth - newMonth;
+        let ageDays = currentDay - newDay;
+
+        if (ageDays < 0) {
+            ageMonths--;
+            ageDays += getDaysInMonth(currentYear, currentMonth - 1); // Previous month
+        }
+
+        if (ageMonths < 0) {
+            ageYears--;
+            ageMonths += 12;
+        }
+
+        years.innerHTML = ageYears;
+        month.innerHTML = ageMonths;
+        day.innerHTML = ageDays;
+    };
+
+    function getDaysInMonth(year, month) {
+        return new Date(year, month, 0).getDate();
+    }
+});
+</script>
+</html>
