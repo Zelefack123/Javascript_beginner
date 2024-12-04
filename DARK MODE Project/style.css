@@ -62,6 +62,7 @@ nav ul li a{
     cursor:pointer;
     font-size: 0.8rem;
 }
+
 nav ul li a:hover{
     background-color: #F24A0D;
     cursor:pointer;
@@ -137,10 +138,7 @@ position:relative;
  color:var(--primary-color);
 }
 
-.footer img{
-  background-color: var(--primary-color);
- cursor: pointer;
-}
+
 
 .footer i:hover{
 color:#F24A0D;

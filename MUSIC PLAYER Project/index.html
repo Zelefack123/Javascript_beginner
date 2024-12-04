@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Music Player project</title>
+</head>
+<body class = "container">
+    <div class="box">
+        <div class="box1">
+        <i class="fa-solid fa-angle-left"></i>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="musicImage">
+        <img src="image.jpeg" alt="music image"  >
+        <h2>Despacito</h2>
+        <p>Luis Fonsi Ft. Puerto Rican</p>
+        <audio  id = "song">
+            <source src = "videoplayback.m4a" type ="audio/mpeg">
+          </audio>
+    </div>
+  
+    <input type="range" id="progress">
+
+    <div class="musicPlayer" >
+        <i class="fa-solid fa-angles-left" id = "leftAngle"></i>
+        <i  onclick ="playPause()" class="fa-solid fa-play" id = "playIcon"></i>
+        <i class="fa-solid fa-angles-right" id = "rightAngle"></i>
+
+    </div></div>
+    <script>
+    const leftAngle = document.getElementById("leftAngle");
+    const play = document.getElementById("playIcon");
+    const rightAngle = document.getElementById("rightAngle");
+    const progress = document.getElementById("progress");
+    const musicPlayer = document.getElementsByClassName("musicImage");
+    let song = document.getElementById("song")
+song.onloadedmetadata = function(){
+    progress.max = song.duration;
+    progress.value = song.currentTime;
+    
+
+}
+function  playPause(){
+    if (play.classList.contains("fa-pause")){
+          song.pause();
+          play.classList.remove("fa-pause")
+          play.classList.add("fa-play")
+
+    }
+
+    else{
+        song.play();
+        play.classList.add("fa-pause")
+        play.classList.remove("fa-play")
+
+    }
+    
+    if(song.play()){
+        setInterval(()=>{
+            progress.value = song.currentTime;
+        },700);
+    }
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    play.classList.add("fa-pause");
+    play.classList.add("fa-play");
+
+}
+}
+    </script>
+</body>
+</html>
