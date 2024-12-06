@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMAGE SLIDER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class = "container">
+<div class="box">
+    <img src="images/back.png" alt="back" id = "back">
+    <div class="box1">
+
+    <img src="images/image-1.png" alt="">
+    <img src="images/image-3.png" alt="">
+    <img src="images/image-4.png" alt="">
+    <img src="images/image-5.png" alt="">
+    <img src="images/image-6.png" alt="">
+
+</div>
+<img src="images/next.png" alt="next"id = "next"  srcset="">
+</div>
+</body>
+<script>
+   let Back =  document.getElementById("back");
+   let Next =  document.getElementById("next");
+   let box1 = document.querySelector(".box1");
+
+Back.onclick = () =>{
+    box1.scrollBy({ left: -300, behavior: "smooth" }); 
+
+  
+}
+Next.onclick = () =>{
+    
+    box1.scrollBy({ left: 300, behavior: "smooth" });
+
+  
+}
+  
+</script>
+</html>

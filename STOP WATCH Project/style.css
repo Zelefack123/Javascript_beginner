@@ -1,0 +1,55 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+.stopwatch{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(img.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken; /* Blend the dark overlay with the image */
+
+    width:40%;
+    padding:2rem;
+}
+
+.stopwatch h1{
+    color: white;
+    font-size:4rem;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+.icons{
+ display: flex;
+ justify-content: center;
+ gap:2rem;
+ margin-top: 3rem;
+ color:#fff;
+
+
+}
+.icons i{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    border:solid 2px white;
+    line-height: 40px;
+    text-align: center;
+}
+.icons i:nth-child(2){
+background-color: orangered;
+width:60px;
+height:60px;
+line-height: 60px;
+margin-top: -0.4rem;
+border:none;
+
+}
